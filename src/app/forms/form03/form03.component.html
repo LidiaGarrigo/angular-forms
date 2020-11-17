@@ -1,1 +1,39 @@
-<p>form03 works!</p>
+
+<form #form03='ngForm' (ngSubmit)='createUser(form03)'>
+  <h4>Name</h4>
+  <mat-form-field class="full-width">
+    <input matInput placeholder="Full Name" ngModel name='username' #username="ngModel" required minlength=4>
+    <mat-error *ngIf="username.invalid">
+      <mat-error *ngIf="username.dirty || username.touched"><span>error</span></mat-error>
+    </mat-error>
+  </mat-form-field>
+
+  <h4>Gender</h4>
+  <mat-form-field appearance="fill">
+    <mat-label>Select Gender</mat-label>
+    <mat-select required>
+      <mat-option *ngFor="let Gender of Genders" [value]="Gender.value">
+        {{Gender.viewValue}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <h4>Date</h4>
+  <mat-form-field class="Datepicker" appearance="fill">
+    <mat-label>Choose a date</mat-label>
+    <input matInput [matDatepicker]="picker" required>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+  <button mat-raised-button (click)="picker.open()">Open</button>
+
+  <h4>Country</h4>
+<mat-form-field appearance="fill">
+  <mat-label>State</mat-label>
+  <mat-select>
+    <mat-option>None</mat-option>
+    <mat-option *ngFor="let state of states" [value]="state">{{state}}</mat-option>
+  </mat-select>
+</mat-form-field>
+
+</form>
+

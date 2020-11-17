@@ -1,3 +1,4 @@
+import { Form02Component } from './forms/form02/form02.component';
 import { FormsModule } from '@angular/forms';
 import { MaterialModule } from './material/material.module';
 import { BrowserModule } from '@angular/platform-browser';
@@ -15,6 +16,7 @@ import { Form03Component } from './forms/form03/form03.component';
     AppComponent,
     HeaderComponent,
     Form01Component,
+    Form02Component,
     Form03Component
   ],
   imports: [

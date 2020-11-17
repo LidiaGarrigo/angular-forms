@@ -8,14 +8,15 @@ import { Component, OnInit } from '@angular/core';
 export class Form01Component implements OnInit {
 
   placeholders = {
-    username:'introduce tu usuario',
-    password:'introduce tu password'
-  }
-  receivedName:string = '';
-  receivedPassword:string = '';
+    username: 'introduce tu usuario',
+    password: 'introduce tu password'
+  };
+  receivedName = '';
+  receivedPassword = '';
 
   constructor() { }
 
+  // tslint:disable-next-line: typedef
   recibirDatos(user, password){
     this.receivedName = user.value;
     this.receivedPassword = password.value;

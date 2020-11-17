@@ -8,11 +8,11 @@ import { User } from '../../shared/classes/user';
 })
 export class Form02Component implements OnInit {
   hide = true;
-  placeholders={
-    username:'type your user name',
-    userpass:'type your password'
-  }
-  user:User = new User();
+  placeholders = {
+    username: 'type your user name',
+    userpass: 'type your password'
+  };
+  user: User = new User();
   constructor() {
     console.log(this.user.getUsername());
     console.log(this.user.getPassword());
@@ -21,6 +21,7 @@ export class Form02Component implements OnInit {
   ngOnInit(): void {
   }
 
+  // tslint:disable-next-line: typedef
   createUser(form){
     console.log(form);
     this.user.setUsername(form.controls.username.value);
