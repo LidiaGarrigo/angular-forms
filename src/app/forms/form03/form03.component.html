@@ -11,14 +11,17 @@
   <h4>Gender</h4>
   <mat-form-field appearance="fill">
     <mat-label>Select Gender</mat-label>
-    <mat-select required>
+    <mat-select required ngModel name='gender' #gender="ngModel">
       <mat-option *ngFor="let Gender of Genders" [value]="Gender.value">
         {{Gender.viewValue}}
       </mat-option>
     </mat-select>
+    <mat-error *ngIf="gender.invalid">
+      <mat-error *ngIf="gender.dirty || gender.touched"><span>error</span></mat-error>
+    </mat-error>
   </mat-form-field>
 
-  <h4>Date</h4>
+  <h4>Birthday</h4>
   <mat-form-field class="Datepicker" appearance="fill">
     <mat-label>Choose a date</mat-label>
     <input matInput [matDatepicker]="picker" required>
@@ -34,6 +37,12 @@
     <mat-option *ngFor="let state of states" [value]="state">{{state}}</mat-option>
   </mat-select>
 </mat-form-field>
+<h4>Bio</h4>
+<mat-form-field appearance="fill">
+  <mat-label>Bio</mat-label>
+  <textarea matInput></textarea>
+</mat-form-field>
+
 
 </form>
 

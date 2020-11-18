@@ -9,7 +9,7 @@ interface Gender {
 @Component({
   selector: 'app-form03',
   templateUrl: './form03.component.html',
-  styleUrls: ['./form03.component.scss']
+  styleUrls: ['./form03.component.scss'],
 })
 export class Form03Component implements OnInit {
 
@@ -30,6 +30,7 @@ export class Form03Component implements OnInit {
     userpass: 'type your password'
   };
   user: User = new User();
+
   constructor() {
     console.log(this.user.getUsername());
     console.log(this.user.getPassword());
