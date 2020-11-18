@@ -37,12 +37,17 @@
     <mat-option *ngFor="let state of states" [value]="state">{{state}}</mat-option>
   </mat-select>
 </mat-form-field>
+
 <h4>Bio</h4>
 <mat-form-field appearance="fill">
   <mat-label>Bio</mat-label>
   <textarea matInput></textarea>
 </mat-form-field>
 
-
+<h4>Telephone</h4>
+<mat-form-field class="telf">
+  <mat-label>Telephone</mat-label>
+  <input matInput type="tel">
+  <mat-icon matSuffix>phone</mat-icon>
+</mat-form-field>
 </form>
-
